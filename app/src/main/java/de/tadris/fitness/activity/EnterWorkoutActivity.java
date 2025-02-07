@@ -198,13 +198,13 @@ public class EnterWorkoutActivity extends InformationActivity implements SelectW
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.actionEnterWorkoutAdd:
-                saveWorkout();
-                return true;
-            case android.R.id.home:
-                finish();
-                return true;
+        if (id == R.id.actionEnterWorkoutAdd) {
+            saveWorkout();
+            return true;
+        } else if (id == android.R.id.home) {
+            finish();
+            return true;
+        }
         }
         return super.onOptionsItemSelected(item);
     }
